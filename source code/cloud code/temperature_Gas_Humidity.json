@@ -1,0 +1,130 @@
+{
+    "@id": "your template Model id",
+    "@type": "Interface",
+    "contents": [
+        {
+            "@type": [
+                "Telemetry",
+                "NumberValue",
+                "Temperature"
+            ],
+            "displayName": {
+                "en": "Temperature(℉)"
+            },
+            "name": "temperature",
+            "schema": "double",
+            "unit": "degreeFahrenheit",
+            "displayUnit": {
+                "en": "℉"
+            }
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "NumberValue",
+                "Humidity"
+            ],
+            "displayName": {
+                "en": "Humidity(%)"
+            },
+            "name": "humidity",
+            "schema": "double",
+            "unit": "percent",
+            "displayUnit": {
+                "en": "%"
+            }
+        },
+        {
+            "@type": [
+                "Telemetry",
+                "NumberValue",
+                "Gas"
+            ],
+            "displayName": {
+                "en": "Gas"
+            },
+            "name": "gas",
+            "schema": "double"
+        },
+        {
+            "@type": "Command",
+            "commandType": "synchronous",
+            "displayName": {
+                "en": "Set Temperature Alarm"
+            },
+            "name": "SetTemperatureAlarm",
+            "request": {
+                "@type": [
+                    "CommandPayload",
+                    "Initialized"
+                ],
+                "comment": "set alarm temperature value",
+                "displayName": {
+                    "en": "AlarmTemperature"
+                },
+                "name": "SetTemperatureAlarm",
+                "schema": "float",
+                "initialValue": 100
+            }
+        },
+        {
+            "@type": "Command",
+            "commandType": "synchronous",
+            "displayName": {
+                "en": "Set Gas Alarm"
+            },
+            "name": "SetGasAlarm",
+            "request": {
+                "@type": [
+                    "CommandPayload",
+                    "Initialized"
+                ],
+                "comment": "set alarm gas value",
+                "displayName": {
+                    "en": "AlarmGas"
+                },
+                "name": "SetGasAlarm",
+                "schema": "float",
+                "initialValue": 1000
+            }
+        },
+        {
+            "@type": "Command",
+            "commandType": "synchronous",
+            "displayName": {
+                "en": "Trigger Buzzer"
+            },
+            "name": "TriggerBuzzer"
+        },
+        {
+            "@type": [
+                "Property",
+                "NumberValue"
+            ],
+            "displayName": {
+                "en": "Telemetry Frequency in Seconds"
+            },
+            "name": "telemetryFrequencySecs",
+            "schema": "integer",
+            "writable": true
+        },
+        {
+            "@type": "Component",
+            "description": {
+                "en": "Interface with basic device hardware information."
+            },
+            "displayName": {
+                "en": "Device Information"
+            },
+            "name": "deviceInformation",
+            "schema": "dtmi:azure:DeviceManagement:DeviceInformation;1"
+        }
+    ],
+    "displayName": {
+        "en": "MyDetector"
+    },
+    "@context": [
+        "dtmi:iotcentral:context;2",
+        "dtmi:dtdl:context;2"
+    ]
+}
