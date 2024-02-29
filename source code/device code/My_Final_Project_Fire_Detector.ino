@@ -475,10 +475,7 @@ void loop()
           (void)azure_pnp_send_device_info(&azure_iot, properties_request_id++);
           send_device_info = false; // Only need to send once.
         }
-        else if (azure_pnp_send_telemetry(&azure_iot,t,h,gas) != 0)
-        {
-          LogError("Failed sending telemetry.");
-        }
+       ///////////////////////////////////////delete
         break;
 		
       case azure_iot_error:
@@ -514,11 +511,8 @@ void loop()
       delay(pauseDuration);
       noTone(Buzzer);
     }else if(gas > alarm_gas) { // gas is MQ2 sensor's realtime value
-      Serial.println("Alert! Gas leak or fire is detected!");
-      tone(Buzzer, Note_E4, 2000);
-      int pauseDuration = 1000 * 3;
-      delay(pauseDuration);
-      noTone(Buzzer);     
+
+	    ////////////////////////////////////////////////////delete
     }
   }
 
