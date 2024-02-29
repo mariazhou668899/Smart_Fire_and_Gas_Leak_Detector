@@ -173,17 +173,7 @@ int azure_pnp_send_device_info(azure_iot_t* azure_iot, uint32_t request_id)
   return RESULT_OK;
 }
 
-bool get_buzzer_status() {
-    return buzzer_status;
-}
-
-float get_temperature_alarm() {
-    return set_alarm_temperature;
-}
-
-float get_gas_alarm() {
-    return set_alarm_gas;
-}
+////////////////////////////////////////delete
 
 int azure_pnp_handle_command_request(azure_iot_t* azure_iot, command_request_t command)
 {
